@@ -1,0 +1,232 @@
+/* Base */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+
+/* Header & Question */
+#quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.question-box {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #e0f2f1;
+    border-left: 5px solid #004d40;
+    border-radius: 4px;
+}
+
+.question-box h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* Options */
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    border: 1px solid #ccc;
+}
+
+.option:hover:not(.selected):not(.correct):not(.incorrect) {
+    background-color: #e5e5e5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.option.selected {
+    border-color: #00796b;
+    background-color: #e0f2f1;
+}
+
+.option.correct {
+    background-color: #c8e6c9; /* Vert clair */
+    border-color: #388e3c; /* Vert foncé */
+    pointer-events: none;
+}
+
+.option.incorrect {
+    background-color: #ffcdd2; /* Rouge clair */
+    border-color: #d32f2f; /* Rouge foncé */
+    pointer-events: none;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Feedback */
+.feedback {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    min-height: 30px; /* Réserver de l'espace */
+}
+
+.correct-msg {
+    color: #388e3c;
+}
+
+.incorrect-msg {
+    color: #d32f2f;
+}
+
+/* Controls (Check, Next, Restart) */
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.2s;
+}
+
+#check-btn, #check-btn-ar {
+    background-color: #00796b;
+    color: white;
+}
+
+#check-btn:hover, #check-btn-ar:hover {
+    background-color: #004d40;
+}
+
+#next-question-btn, #next-question-btn-ar, #restart-btn, #restart-btn-ar {
+    background-color: #607d8b;
+    color: white;
+}
+
+#next-question-btn:hover, #next-question-btn-ar:hover, #restart-btn:hover, #restart-btn-ar:hover {
+    background-color: #455a64;
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+/* Langue (for bilingual display) */
+.lang-ar {
+    text-align: right;
+}
+
+.lang-fr {
+    text-align: left;
+}
+
+/* Score Display */
+#score-container {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #004d40;
+    border-radius: 10px;
+    background-color: #e0f2f1;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#score-container span {
+    color: #00796b;
+    font-size: 1.5em;
+}
+
+/* --------------------------------------------------- */
+/* NEW PAGINATION STYLES */
+/* --------------------------------------------------- */
+
+#pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    border-top: 1px dashed #e0e0e0;
+    padding-top: 15px;
+    /* This makes the navigation buttons for pages have a different color/style */
+}
+
+#page-numbers-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for many buttons */
+    justify-content: center;
+    margin: 0 10px;
+    gap: 5px;
+    max-width: 500px; /* Constraint to keep them grouped */
+}
+
+#page-numbers-container button {
+    padding: 8px 12px;
+    background-color: #f4f7f6; /* Lighter background for page numbers */
+    color: #004d40;
+    font-weight: bold;
+    border: 1px solid #b2dfdb;
+    transition: background-color 0.2s, color 0.2s;
+    min-width: 40px;
+}
+
+#page-numbers-container button:hover {
+    background-color: #e0f2f1;
+    cursor: pointer;
+}
+
+#page-numbers-container button.active {
+    background-color: #004d40; /* Darker background for active page */
+    color: white;
+    border-color: #004d40;
+    pointer-events: none;
+}
+
+/* Style for page navigation buttons */
+#prev-page-btn, #prev-page-btn-ar, #next-page-btn, #next-page-btn-ar {
+    background-color: #4db6ac;
+    color: white;
+    font-weight: bold;
+}
+
+#prev-page-btn:hover, #prev-page-btn-ar:hover, #next-page-btn:hover, #next-page-btn-ar:hover {
+    background-color: #26a69a;
+}

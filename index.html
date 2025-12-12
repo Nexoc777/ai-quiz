@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM sur l'Intelligence Artificielle et l'Éthique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quiz sur l'IA et l'Éthique</h1>
+        
+        <div id="quiz-header">
+            <p id="question-number-fr">Question 1 / 100</p>
+            <p id="question-number-ar" dir="rtl">السؤال 1 / 100</p>
+        </div>
+        
+        <div class="question-box">
+            <h2 id="question-fr" class="lang-fr"></h2>
+            <h2 id="question-ar" class="lang-ar" dir="rtl"></h2>
+        </div>
+
+        <div id="options-container">
+        </div>
+
+        <div id="feedback" class="feedback">
+        </div>
+
+        <div id="pagination-controls" class="controls">
+            <button id="prev-page-btn" class="hidden lang-fr">Page Précédente</button>
+            <button id="prev-page-btn-ar" class="hidden lang-ar" dir="rtl">الصفحة السابقة</button>
+            <div id="page-numbers-container">
+                </div>
+            <button id="next-page-btn" class="hidden lang-fr">Page Suivante</button>
+            <button id="next-page-btn-ar" class="hidden lang-ar" dir="rtl">الصفحة التالية</button>
+        </div>
+        <div class="controls">
+            <button id="check-btn" class="lang-fr">Vérifier la réponse</button>
+            <button id="check-btn-ar" class="lang-ar" dir="rtl">تحقق من الإجابة</button>
+            
+            <button id="next-question-btn" class="hidden lang-fr">Question Suivante</button>
+            <button id="next-question-btn-ar" class="hidden lang-ar" dir="rtl">السؤال التالي</button>
+            
+            <button id="restart-btn" class="hidden lang-fr">Recommencer le Quiz</button>
+            <button id="restart-btn-ar" class="hidden lang-ar" dir="rtl">إعادة بدء الاختبار</button>
+        </div>
+        
+        <div id="score-container" class="hidden">
+            <p class="lang-fr">Score final : <span id="score-fr">0</span> / 100</p>
+            <p class="lang-ar" dir="rtl">النتيجة النهائية : <span id="score-ar">0</span> / 100</p>
+        </div>
+    </div>
+    
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
